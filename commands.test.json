@@ -1,0 +1,85 @@
+{
+	"$schema": "./schema/commands.schema.json",
+	"commands": [
+		{
+			"name": "TestCommand",
+			"description": "Command",
+			"type": "slash",
+			"subcommandGroups": {
+				"sub1": "Subcommand group 1",
+				"sub2": "Subcommand group 2"
+			},
+			"options": [
+				{
+					"name": "Gender",
+					"type": "string",
+					"description": "Option 1",
+					"required": true,
+					"choices": [
+						{
+							"name": "Male",
+							"value": "gender_male"
+						},
+						{
+							"name": "Female",
+							"value": "gender_female"
+						}
+					]
+				},
+				{
+					"name": "OtherName",
+					"type": "number",
+					"description": "Option 2",
+					"required": false
+				}
+			]
+		},
+		{
+			"name": "OtherCommand",
+			"description": "Other command",
+			"type": "slash",
+			"subcommandGroups": {
+				"sub1": "Subcommand group 1",
+				"sub2": "Subcommand group 2"
+			},
+			"subcommands": [
+				{
+					"name": "SubName",
+					"description": "Subcommand 1",
+					"group": "sub1",
+					"options": [
+						{
+							"name": "Subject",
+							"description": "User selection",
+							"type": "user",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "SubName2",
+					"description": "Subcommand 2",
+					"group": "sub1",
+					"options": [
+						{
+							"name": "Role",
+							"description": "Role selection",
+							"type": "role",
+							"required": false
+						}
+					]
+				},
+				{
+					"name": "SubName3",
+					"description": "Subcommand 3",
+					"group": "sub2"
+				},
+				{
+					"name": "SubName4",
+					"description": "Subcommand 4",
+					"group": "sub2"
+				}
+			]
+		}
+	]
+}

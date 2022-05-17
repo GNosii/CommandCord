@@ -1,0 +1,132 @@
+{
+	"definitions": {
+		"option": {
+			"title": "Items",
+			"type": "object",
+			"required": ["name", "type", "description", "required"],
+			"properties": {
+				"name": {
+					"title": "Name",
+					"type": "string"
+				},
+				"type": {
+					"title": "Type",
+					"enum": [
+						"boolean",
+						"user",
+						"channel",
+						"role",
+						"mentionable",
+						"string",
+						"integer",
+						"number"
+					]
+				},
+				"description": {
+					"title": "Description",
+					"type": "string"
+				},
+				"required": {
+					"title": "Required",
+					"type": "boolean"
+				},
+				"choices": {
+					"title": "Choices",
+					"type": "array",
+					"default": [],
+					"items": {
+						"title": "Items",
+						"type": "object",
+						"required": ["name", "value"],
+						"properties": {
+							"name": {
+								"title": "Name",
+								"type": "string",
+								"description": "The string shown to users."
+							},
+							"value": {
+								"title": "Value",
+								"type": "string",
+								"description": "The internal key used for interactions."
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Root",
+	"type": "object",
+	"required": ["commands"],
+	"properties": {
+		"commands": {
+			"title": "Commands",
+			"type": "array",
+			"items": {
+				"title": "Items",
+				"type": "object",
+				"required": ["name", "description"],
+				"properties": {
+					"name": {
+						"title": "Name",
+						"type": "string"
+					},
+					"type": {
+						"title": "Type",
+						"enum": ["slash", "user", "message"]
+					},
+					"description": {
+						"title": "Description",
+						"type": "string"
+					},
+					"options": {
+						"title": "Options",
+						"type": "array",
+						"items": {
+							"$ref": "#/definitions/option"
+						}
+					},
+					"subcommandGroups": {
+						"title": "Subcommand Group Definitions",
+						"type": "object",
+						"additionalProperties": {
+							"description": "Definition for an Subcommand Group",
+							"type": "string"
+						}
+					},
+					"subcommands": {
+						"title": "Subcommands",
+						"type": "array",
+						"items": {
+							"title": "Items",
+							"type": "object",
+							"required": ["name", "description"],
+							"properties": {
+								"name": {
+									"title": "Name",
+									"type": "string"
+								},
+								"group": {
+									"title": "Subcommand Group",
+									"type": "string"
+								},
+								"description": {
+									"title": "Description",
+									"type": "string"
+								},
+								"options": {
+									"title": "Options",
+									"type": "array",
+									"items": {
+										"$ref": "#/definitions/option"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
