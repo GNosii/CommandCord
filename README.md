@@ -2,7 +2,7 @@
 
 Deploy commands to Discord's API, easily.
 
-Originally a part of (Pogbot)[https://github.com/GNosii/Pogbot], now split into its own project.
+Originally a part of [Pogbot](https://github.com/GNosii/Pogbot), now split into its own project.
 
 CommandCord is built in an way that you can run it from outside your bot's codebase. Allowing you to also use it, if you're using another library/language for your bot.
 
@@ -61,7 +61,7 @@ This will create an `profile` slash command, with two options (parameters):
 - **Name**
   - Of type string, it isn't required.
 
-!(Result of deploying an command via CommandCord)[https://i.imgur.com/r0n5q8K.png]
+![Result of deploying an command via CommandCord](https://i.imgur.com/r0n5q8K.png)
 
 Then, you can deploy your commands.
 
@@ -116,4 +116,7 @@ deploy(
 
 ## JSON Schema
 
+> ⚠️ Be aware the JSON schema is missing descriptions and more, this is just so you can validate the structure of your commands, I'm working on this!
+
 You can use our JSON schema for validating your commands file.
+[Link to the JSON schema](https://raw.githubusercontent.com/GNosii/CommandCord/master/schema/commands.schema.json)
