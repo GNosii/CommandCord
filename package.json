@@ -5,13 +5,10 @@
 	"main": "./dist/index.js",
 	"scripts": {
 		"lint": "prettier . -w",
-		"build": "tsc && node ./scripts/moveDefinitions.cjs"
+		"build": "tsc && node ./scripts/structure.cjs"
 	},
 	"files": [
-		"dist/cli.js",
-		"dist/index.d.ts",
-		"dist/index.js",
-		"dist/internal/index.d.ts"
+		"./dist/"
 	],
 	"types": "./dist/index.d.ts",
 	"bin": {
