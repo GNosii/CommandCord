@@ -4,7 +4,8 @@
 	"description": "Deploy commands to Discord's API, easily.",
 	"main": "index.js",
 	"scripts": {
-		"lint": "prettier . -w"
+		"lint": "prettier . -w",
+		"build": "tsc && node ./scripts/moveDefinitions.js"
 	},
 	"files": [
 		"dist"
