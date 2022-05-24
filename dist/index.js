@@ -26,7 +26,7 @@ var npmlog_1 = __importDefault(require("npmlog"));
  * Waiting for https://nodejs.org/docs/latest-v17.x/api/globals.html#fetch to leave Experimental stability. 😴
  */
 var undici_1 = require("undici");
-var types_1 = require("./types");
+var internal_1 = require("./internal");
 var isDebugging;
 /**
  * Deploy an object with valid CommandCord commands to Discord's API.
@@ -61,7 +61,7 @@ function deploy(content, id, token, guild, debug) {
         //console.debug('Currently parsing', command);
         var current = {
             name: command.name.toLowerCase(),
-            type: Number(types_1.ApplicationCommandType[command.type]),
+            type: Number(internal_1.ApplicationCommandType[command.type]),
             description: command.description,
             options: []
         };
@@ -93,17 +93,17 @@ function deploy(content, id, token, guild, debug) {
                 }
                 else {
                     var opt = subcommand;
-                    opt.type = types_1.ApplicationCommandOptionType.subcommand;
+                    opt.type = internal_1.ApplicationCommandOptionType.subcommand;
                     current.options.push(opt);
                 }
             });
             groups_1.forEach(function (group) {
                 var opt = group;
-                opt.type = types_1.ApplicationCommandOptionType.subcommandGroup;
+                opt.type = internal_1.ApplicationCommandOptionType.subcommandGroup;
                 opt.options = group.children;
                 opt.options.map(function (sc) {
                     (sc.name = sc.name.toLowerCase()),
-                        (sc.type = types_1.ApplicationCommandOptionType.subcommand);
+                        (sc.type = internal_1.ApplicationCommandOptionType.subcommand);
                 });
                 current.options.push(opt);
             });
@@ -145,14 +145,14 @@ function sendData(endpoint, token, object) {
 function getOptionsForObject(object) {
     var options = [];
     object.options.forEach(function (option) {
-        if (types_1.ApplicationCommandOptionType[option.type] == undefined)
+        if (internal_1.ApplicationCommandOptionType[option.type] == undefined)
             throw new ParseError("Invalid option type " + option.type, [
                 object.name,
                 option.name,
             ]);
         var obj = {
             name: option.name.toLowerCase(),
-            type: Number(types_1.ApplicationCommandOptionType[option.type]),
+            type: Number(internal_1.ApplicationCommandOptionType[option.type]),
             description: option.description,
             required: option.required === undefined ? true : option.required
         };

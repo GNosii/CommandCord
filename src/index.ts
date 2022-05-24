@@ -16,7 +16,7 @@ import {
 	DiscordApplicationCommandOption,
 	ApplicationCommandOptionType,
 	InitialObject,
-} from "./types";
+} from "./internal";
 
 let isDebugging: boolean;
 
