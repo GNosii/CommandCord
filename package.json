@@ -8,7 +8,10 @@
 		"build": "tsc && node ./scripts/moveDefinitions.cjs"
 	},
 	"files": [
-		"dist"
+		"dist/cli.js",
+		"dist/index.d.ts",
+		"dist/index.js",
+		"dist/internal/index.d.ts"
 	],
 	"types": "./dist/index.d.ts",
 	"bin": {
