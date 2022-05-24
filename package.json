@@ -2,7 +2,7 @@
 	"name": "commandcord",
 	"version": "1.0.0",
 	"description": "Deploy commands to Discord's API, easily.",
-	"main": "index.js",
+	"main": "./dist/index.js",
 	"scripts": {
 		"lint": "prettier . -w",
 		"build": "tsc && node ./scripts/moveDefinitions.js"
@@ -10,8 +10,9 @@
 	"files": [
 		"dist"
 	],
+	"types": "./dist/index.d.ts",
 	"bin": {
-		"deploy": "./dist/cli/deploy.js"
+		"deploy": "./dist/cli.js"
 	},
 	"repository": {
 		"type": "git",

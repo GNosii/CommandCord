@@ -4,7 +4,7 @@ import { readFile } from "fs/promises";
 import npmlog, { error, log } from "npmlog";
 import { normalize } from "path";
 import { isNullOrUndefined } from "util";
-import { deploy } from "..";
+import { deploy } from ".";
 
 var { argv } = require("yargs")
 	.scriptName("deploy")
