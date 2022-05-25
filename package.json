@@ -1,6 +1,6 @@
 {
-	"name": "commandcord",
-	"version": "1.0.0",
+	"name": "@elnosii/commandcord",
+	"version": "0.0.1",
 	"description": "Deploy commands to Discord's API, easily.",
 	"main": "./dist/index.js",
 	"scripts": {
@@ -8,7 +8,7 @@
 		"build": "tsc && node ./scripts/structure.cjs"
 	},
 	"files": [
-		"./dist/"
+		"dist"
 	],
 	"types": "./dist/index.d.ts",
 	"bin": {

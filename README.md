@@ -1,4 +1,7 @@
 # CommandCord
+![NPM License](https://img.shields.io/npm/l/@elnosii/commandcord?style=flat-square)
+![NPM Dependents](https://img.shields.io/librariesio/dependent-repos/npm/@elnosii/commandcord?style=flat-square)
+![NPM Version](https://img.shields.io/npm/v/@elnosii/commandcord?style=flat-square)
 
 Deploy commands to Discord's API, easily.
 
@@ -6,6 +9,11 @@ Originally a part of [Pogbot](https://github.com/GNosii/Pogbot), now split into 
 
 CommandCord is built in an way that you can run it from outside your bot's codebase. Allowing you to also use it, if you're using another library/language for your bot.
 
+## Installating
+
+You can install from NPM by using this command:
+`npm i @elnosii/commandcord --save-dev`
+ 
 ## Defining commands
 
 1. Create an `commands.json` file (you can name it whatever you want!) with this initial structure:
@@ -86,7 +94,7 @@ If you don't feel safe passing your credentials via CLI, you can use the `-e` or
 1. Import the module, like this:
 
 ```js
-import { deploy } from "commandcord";
+import { deploy } from "@elnosii/commandcord/dist/index.js";
 ```
 
 2. You can now call the function. For example, if you were deploying globally:
