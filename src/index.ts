@@ -222,6 +222,26 @@ function doCommandChecks(command: Command) {
 	if (command.type === undefined)
 		throw new ParseError("Missing required property 'type'", [command.name]);
 
+	if (
+		command.subcommands !== undefined &&
+		<string>(<unknown>command.type) !== "slash"
+	)
+		throw new ParseError(
+			"Command type " + command.type + " does not support subcommands.",
+			[command.name]
+		);
+
+	if (
+		command.description !== undefined &&
+		<string>(<unknown>command.type) !== "slash"
+	)
+		throw new ParseError(
+			"Command type " +
+				command.type +
+				" does not support the description property.",
+			[command.name]
+		);
+
 	if (command.name !== command.name.toLowerCase())
 		log.warn(
 			"Parser",

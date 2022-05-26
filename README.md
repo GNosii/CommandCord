@@ -1,4 +1,5 @@
 # CommandCord
+
 ![NPM License](https://img.shields.io/npm/l/@elnosii/commandcord?style=flat-square)
 ![NPM Dependents](https://img.shields.io/librariesio/dependent-repos/npm/@elnosii/commandcord?style=flat-square)
 ![NPM Version](https://img.shields.io/npm/v/@elnosii/commandcord?style=flat-square)
@@ -13,7 +14,7 @@ CommandCord is built in an way that you can run it from outside your bot's codeb
 
 You can install from NPM by using this command:
 `npm i @elnosii/commandcord --save-dev`
- 
+
 ## Defining commands
 
 1. Create an `commands.json` file (you can name it whatever you want!) with this initial structure:

@@ -169,6 +169,14 @@ function doCommandChecks(command) {
         throw new ParseError("Commands cannot have subcommands and options at the same time", [command.name]);
     if (command.type === undefined)
         throw new ParseError("Missing required property 'type'", [command.name]);
+    if (command.subcommands !== undefined &&
+        command.type !== "slash")
+        throw new ParseError("Command type " + command.type + " does not support subcommands.", [command.name]);
+    if (command.description !== undefined &&
+        command.type !== "slash")
+        throw new ParseError("Command type " +
+            command.type +
+            " does not support the description property.", [command.name]);
     if (command.name !== command.name.toLowerCase())
         npmlog_1["default"].warn("Parser", "Command name '" + command.name + "' is not lowercased.");
     if (command.subcommands === undefined &&
